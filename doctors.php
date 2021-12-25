@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -13,8 +14,6 @@ if(isset($_SESSION['aoth'])){
 }else{
 	header("location:login.php");
 }
-
-
 
 
 include "lip/connection.php";
@@ -36,7 +35,7 @@ $counting = $result -> num_rows;
 
  ?>
 
-  <?php
+ <?php
 
 
 include "lip/connection.php";
@@ -47,16 +46,19 @@ $countingg = $result -> num_rows;
 
  ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>doctors- Dashboard</title>
+	<title>doctors info</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/mystyles.css" rel="stylesheet">
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -64,6 +66,18 @@ $countingg = $result -> num_rows;
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		.xxx{
+			margin-top: 80px;
+		}
+
+		.team-heading{
+			margin-bottom: 80px;
+
+
+		}
+	</style>
+
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -81,7 +95,7 @@ $countingg = $result -> num_rows;
 						<ul class="dropdown-menu dropdown-messages">
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="sazol.jpg">
+									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
 									</a>
 									<div class="message-body"><small class="pull-right"></small>
 										<a href="#"><strong></strong>  <strong></strong>.</a>
@@ -91,7 +105,7 @@ $countingg = $result -> num_rows;
 							<li class="divider"></li>
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="sazol.jpg">
+									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
 									</a>
 									<div class="message-body"><small class="pull-right"></small>
 										<a href="#"> <strong></strong>.</a>
@@ -209,86 +223,167 @@ $countingg = $result -> num_rows;
 				</div>
 			</div><!--/.row-->
 
-					<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Service Overview
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<div class="canvas-wrapper">
-							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
-						</div>
+
+			
+
+	<!-- team section -->
+	<section class="team" id="team">
+		<div class="container">
+			<div class="row">
+				<div class="team-heading text-center">
+					<h2 style="text-transform: uppercase;  font-weight: bold;">our doctors</h2>
+					<h4>At Doctors Services we believe that physicians should be fairly compensated for all services they provide and that patients should be informed of what uninsured services are and why they are paying for them. Our Annual Fee/Block Fee Billing program is fully customizable, professionally run, and most importantly it educates patients and provides them with exemplary customer service.</h4>
+				</div>
+				<!-- people1 -->
+				<div class="col-md-3 member single-member col-sm-4">
+					<div class="person">
+						<img class="img-responsive" src="../img/member1.jpg" alt="member-1">
+					</div>
+					<div class="person-detail">
+						<div class="arrow-bottom"></div>
+						<h3>Dr. Mohammad Jahangir Talukder</h3>
+						<p>Qualification: MBBS(Ctg), MRCP(UK)<br>
+						Specialist: Internal Medicine<br>
+						Designation: Consultant<br>
+						Experiences: 40 Years<br>
+						Chamber: United Hospital Ltd, OPD 1, Room 2, Ground Floor<br>
+						Visiting Hours: 9.00 am- 5.00 pm (6 days except Friday)<br>
+						Phone for serial: 02 9852466</p>
+
+						
 					</div>
 				</div>
-			</div>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>New Doctors</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">75%</span></div>
+				<!-- people1 end -->
+
+
+				<!-- people1 -->
+				<div class="col-md-3 member single-member col-sm-4">
+					<div class="person">
+						<img class="img-responsive" src="../img/member2.jpg" alt="member-1">
+					</div>
+					<div class="person-detail">
+						<div class="arrow-bottom"></div>
+						<h3>Prof. Dr. R. K. Saha</h3>
+						<p>
+							MBBS, FCPS ( Med)<br>
+							Designation: Professor Of Medicine<br>
+							Organization: Uttara Crescent Hospital and Uttara Aichi Hospital.
+							Ex Principal and Professor and Head Dept of Medicine, Sher-E-Bangla Medical College, Barisal and Uttara Women's Medical College Hospital, Dhaka<br>
+							Chamber: Uttara Crescent Hospital and Uttara Aichi Hospital.<br>
+							Phone: +88 01711245746
+						</p>
+
+						
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>New Users</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span></div>
+				<!-- people1 end -->
+
+				<!-- people1 -->
+				<div class="col-md-3 member single-member col-sm-4">
+					<div class="person">
+						<img class="img-responsive" src="../img/member3.jpg" alt="member-1">
+					</div>
+					<div class="person-detail">
+						<div class="arrow-bottom"></div>
+						<h3>Dr. Abdullah Al Mamun</h3>
+						<p>
+							MBBS, FCPS (Medicine), MACP ( USA ), FACP
+							Ex-Associate Professor
+							Khulna Medical Collage Hospital <br>
+							Designation : Consultant <br>
+							Expertise : Internal Medicine <br>
+							Organization: Apollo Hospitals Dhaka<br>
+							Chamber: Apollo Hospitals Dhaka<br>
+							Location: Plot # 81, Block # E, Basudhara R/A, Dhaka - 1229<br>
+							Phone: +880-2-8401661, 8845242, Cell: +880 1841276556, Hotline: 10678
+						</p>
+
+						
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>New patiant</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span class="percent">56%</span></div>
+				<!-- people1 end -->
+
+				<!-- people1 -->
+				<div class="col-md-3 member single-member col-sm-4">
+					<div class="person">
+						<img class="img-responsive" src="../img/member4.jpg" alt="member-1">
+					</div>
+					<div class="person-detail">
+						<div class="arrow-bottom"></div>
+						<h3>Dr. Afsana Begum</h3>
+						<p>
+							Qualification : MBBS, FCPS <br>
+							Designation : Specialist<br>
+							Expertise : Internal Medicine<br>
+							Organization: United Hospital Limited<br>
+							Chamber: United Hospital Limited<br>
+							Location: Plot # 15, Road # 71, Gulshan - 2, Dhaka - 1212, Bangladesh<br>
+							Phone: +880-2-8836000
+						</p>
+
+						
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>new Message</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span></div>
+				<!-- people1 end -->
+
+				<!-- people1 -->
+				<div class="col-md-3 member single-member col-sm-4">
+					<div class="person">
+						<img class="img-responsive" src="../img/member5.jpg" alt="member-1">
+					</div>
+					<div class="person-detail">
+						<div class="arrow-bottom"></div>
+						<h3>Dr. Anup Kumar Saha</h3>
+						<p>
+							Qualification : MBBS, FCPS ( Medicine ), MD ( Internal Medicine ), FACP ( America ) <br>
+							Designation : Associate Professor<br>
+							Expertise : Medicine<br>
+							Organization: Sir Salimullah Medical College and Mitford Hospital<br>							Chamber: Monowara Hospital (pvt) Ltd<br>
+							Phone: +880-2-8318135, 8319802
+						</p>
+
+						
+					</div>	
 					</div>
 				</div>
+				<!-- people1 end -->
+
+				<!-- people1 -->
+				<div class="col-md-3 member single-member col-sm-4">
+					<div class="person">
+						<img class="img-responsive" src="../img/member6.jpg" alt="member-1">
+					</div>
+					<div class="person-detail">
+						<div class="arrow-bottom"></div>
+						<h3>Dr. Bristy Paul </h3>
+						<p>
+							Qualification : MBBS, FCPS ( Medicine ), MD ( Internal Medicine ), FACP ( America ) <br>
+							Designation : Medical Officer<br>
+							Expertise : Medicine<br>
+							Organization: Bangabandhu Sheikh Mujib Medical University<br>
+							Chamber: Dr. Azmal Hospital Ltd.<br>
+							Phone: +880-2-8051974, 9005085 
+
+						 </p>
+
+						
+					</div>
+				</div>
+				<!-- people1 end -->
+
+				
+				
 			</div>
-		</div><!--/.row-->
-		
-	
+		</div>
+	</section><!-- end of team section -->
+
+					
+					
+			
 		
 	</div>	<!--/.main-->
 	
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/custom.js"></script>
-	<script>
-		window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-};
-	</script>
+
 		
 </body>
 </html>

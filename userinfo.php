@@ -15,8 +15,6 @@ if(isset($_SESSION['aoth'])){
 }
 
 
-
-
 include "lip/connection.php";
 
 $sql = "SELECT * FROM appointmentinfo";
@@ -47,12 +45,28 @@ $countingg = $result -> num_rows;
 
  ?>
 
+
+
+
+<?php 
+include "lip/connection.php";
+
+$sql = "SELECT * FROM web ";
+$result = $conn->query($sql);
+$count = $result -> num_rows;
+
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>doctors- Dashboard</title>
+	<title>user info</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -64,6 +78,12 @@ $countingg = $result -> num_rows;
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		.xxx{
+			margin-top: 80px;
+		}
+	</style>
+
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -81,7 +101,7 @@ $countingg = $result -> num_rows;
 						<ul class="dropdown-menu dropdown-messages">
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="sazol.jpg">
+									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
 									</a>
 									<div class="message-body"><small class="pull-right"></small>
 										<a href="#"><strong></strong>  <strong></strong>.</a>
@@ -91,7 +111,7 @@ $countingg = $result -> num_rows;
 							<li class="divider"></li>
 							<li>
 								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="sazol.jpg">
+									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
 									</a>
 									<div class="message-body"><small class="pull-right"></small>
 										<a href="#"> <strong></strong>.</a>
@@ -209,64 +229,54 @@ $countingg = $result -> num_rows;
 				</div>
 			</div><!--/.row-->
 
-					<div class="row">
+
+			<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Service Overview
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<div class="canvas-wrapper">
-							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
-						</div>
-					</div>
+				<div class="panel panel-default xxx">
+
+					<h2>User Information</h2><br>
+
+	<h4>Number of row <?php echo $count; ?></h4>
+	<table class="table table-striped table-dark">
+		<tr>
+			
+			<th>ID</th>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+			<th>Password</th>
+
+		</tr>
+<?php if ($result -> num_rows > 0 ){ ?>
+	<?php while($u_row = $result -> fetch_assoc()){ ?>
+		<tr>
+			<td><?php echo $u_row['id']; ?></td>
+			<td><?php echo $u_row['name']; ?></td>
+			<td><?php echo $u_row['address']; ?></td>
+			<td><?php echo $u_row['pnumber']; ?></td>
+			<td><?php echo $u_row['email']; ?></td>
+			<td><?php echo $u_row['password']; ?></td>
+			
+		</tr>
+	<?php } ?>
+<?php }else { ?>
+
+		<tr>
+			<td>no data</td>
+			<td>no data</td>
+			<td> no data</td>
+			<td>no data</td>
+			<td>no data</td>
+			<td>no data</td>
+		</tr>
+	<?php } ?>
+	</table>
+					
+					
 				</div>
 			</div>
 		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>New Doctors</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">75%</span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>New Users</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>New patiant</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span class="percent">56%</span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>new Message</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span></div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
-		
-	
 		
 	</div>	<!--/.main-->
 	
